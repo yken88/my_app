@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Menu\MenuController;
+use App\Http\Controllers\Recipe\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('menu/menu', [MenuController::class, 'menu'])->name('menu');
+Route::resource('recipe', RecipeController::class);
 
