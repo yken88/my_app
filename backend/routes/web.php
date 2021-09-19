@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Menu\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('menu/menu', [MenuController::class, 'menu'])->name('menu');
+
