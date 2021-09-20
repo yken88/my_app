@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Recipe;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Recipe;
 
 class RecipeController extends Controller
 {
@@ -14,7 +15,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return view('recipe/index');
+        return view('recipe.index');
     }
 
     /**
