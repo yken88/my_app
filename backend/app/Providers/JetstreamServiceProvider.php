@@ -28,6 +28,7 @@ class JetstreamServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::component('jetstream::components.textarea', 'jet-textarea');
+        Blade::component('jetstream::components.textarea-error', 'jet-textarea-error');
 
         $this->configurePermissions();
 
