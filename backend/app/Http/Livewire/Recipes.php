@@ -9,7 +9,7 @@ class Recipes extends Component
 {
     public function render()
     {
-        return view('livewire.recipes', [
+        return view('livewire.recipe.recipes', [
             'recipes' => Recipe::all(),
         ]);
     }

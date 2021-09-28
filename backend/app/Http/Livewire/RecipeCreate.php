@@ -2,40 +2,41 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Recipe;
 
 class RecipeCreate extends Component
 {
-    public $posts;
+    public $recipe;
 
     protected $rules = [
-        'posts.recipe_name' => 'required',
-        'posts.procedure' => 'required',
-        'posts.materials' => 'required|255',
-        'posts.time_required' => 'required',
-        'posts.cocking_day' => 'required',
+        'recipe.recipe_name' => 'required',
+        'recipe.procedure' => 'required',
+        'recipe.materials' => 'required|max:255',
+        'recipe.time_required' => 'required',
+        'recipe.cocking_day' => 'required',
         ];
     
     // エラーメッセージの設定
     protected $messages = [
-        'posts.*.required' => '必須項目です',
-        'posts.mail.email' => '正しいメールアドレスを入力ください',
+        'recipe.*.required' => '必須項目です',
     ];
 
 
     public function mount(){
-        $this->posts = session()->get('posts');
+        $this->recipe['user_id'] = Auth::id();
     }
 
     public function render()
     {
-        return view('livewire.recipe-create');
+        return view('livewire.recipe.recipe-create');
     }
 
     public function create(){
         $this->validate();
-        session()->put('posts', $this->posts);
+        Recipe::create($this->recipe);
 
-        return redirect()->route('create');
+        return redirect('/recipes');;
     }
 }
