@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Recipe;
 
 use Livewire\Component;
 use App\Models\Recipe;
+use Illuminate\Support\Facades\Auth;
+
 
 class Recipes extends Component
 {
     public function render()
     {
         return view('livewire.recipe.recipes', [
-            'recipes' => Recipe::all(),
+            'recipes' => Recipe::where('user_id', Auth::id())->get(),
         ]);
     }
 }
