@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\Recipe\RecipeController;
-use App\Http\Livewire\Recipes;
-use App\Http\Livewire\RecipeCreate;
+use App\Http\Livewire\Recipe\Recipes;
+use App\Http\Livewire\Recipe\RecipeCreate;
+use App\Http\Livewire\Recipe\RecipeEdit;
 
 
 /*
@@ -26,7 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('recipe', RecipeController::class);
+// Route::resource('recipe', RecipeController::class);
 
-Route::get('recipes', Recipes::class)->name('recipes');
-Route::get('create', RecipeCreate::class)->name('create');
+Route::get('recipes', Recipes::class)->name('recipe.recipes');
+Route::get('create', RecipeCreate::class)->name('recipe.create');
+Route::get('edit/{id}', RecipeEdit::class)->name('recipe.edit');
