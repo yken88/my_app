@@ -15,4 +15,9 @@ class Recipes extends Component
             'recipes' => Recipe::where('user_id', Auth::id())->get(),
         ]);
     }
+
+    public function delete($id)
+    {
+        Recipe::destroy($id);
+    }
 }
