@@ -1,51 +1,23 @@
-# docker-laravel 🐳
+# 献立管理サービス
+ 
+1週間の献立を決めてしまい、簡単な操作で管理できるサービス
+ 
+# DEMO
+ 
+作成中
+ 
+# 作りたいと思った背景
+ 自炊をする中で、献立を決めることが一番面倒くさいということに気づく。
+ 献立を1週間の初めに、決めてしまいたい。がきっかけで、
+ 自分の自炊の効率、モチベーション維持につながるようなサービスが作りたかった。
+ 
+# 使用技術
+使用言語　PHP
+データベース MySQL
+webサーバ　Nginx
+開発環境　docker
 
-![License](https://img.shields.io/github/license/ucan-lab/docker-laravel?color=f05340)
-![Stars](https://img.shields.io/github/stars/ucan-lab/docker-laravel?color=f05340)
-![Issues](https://img.shields.io/github/issues/ucan-lab/docker-laravel?color=f05340)
-![Forks](https://img.shields.io/github/forks/ucan-lab/docker-laravel?color=f05340)
-
-## Introduction
-
-Build a simple laravel development environment with docker-compose.
-
-## Usage
-
-```bash
-$ git clone git@github.com:ucan-lab/docker-laravel.git
-$ cd docker-laravel
-$ make create-project # Install the latest Laravel project
-$ make install-recommend-packages # Optional
-```
-
-http://localhost
-
-## Tips
-
-- Read this [Makefile](https://github.com/ucan-lab/docker-laravel/blob/main/Makefile).
-- Read this [Wiki](https://github.com/ucan-lab/docker-laravel/wiki).
-
-## Container structures
-
-```bash
-├── app
-├── web
-└── db
-```
-
-### app container
-
-- Base image
-  - [php](https://hub.docker.com/_/php):8.0-fpm-buster
-  - [composer](https://hub.docker.com/_/composer):2.0
-
-### web container
-
-- Base image
-  - [nginx](https://hub.docker.com/_/nginx):1.20-alpine
-  - [node](https://hub.docker.com/_/node):16-alpine
-
-### db container
-
-- Base image
-  - [mysql/mysql-server](https://hub.docker.com/r/mysql/mysql-server):8.0
+フレームワーク　Laravel
+  
+# Author
+ * 矢野健太郎
