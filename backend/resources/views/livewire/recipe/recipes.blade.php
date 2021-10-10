@@ -19,8 +19,8 @@
                             <td class="border px-4 py-2">{{ $recipe->recipe_name }}</td>
                             <td class="border px-4 py-2">{{ $recipe->procedure}}</td>
                             <td class="border px-4 py-2">{{ $recipe->cocking_day }}</td>
-                            <td class="border px-4 py-2"><a href="{{ route('recipe.edit', $recipe->id)}}"> 編集</a></td>
-                            <td class="border px-4 py-2">削除</td>
+                            <td class="border px-4 py-2"><a href="{{ route('recipe.edit', $recipe->id )}}"> 編集</a></td>
+                            <td class="border px-4 py-2"><button wire:click.prevent="delete({{ $recipe->id }})">削除</button></td>
                         </tr>
                     @endforeach
                 </tbody>

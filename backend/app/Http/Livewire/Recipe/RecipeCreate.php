@@ -37,6 +37,6 @@ class RecipeCreate extends Component
         $this->validate();
         Recipe::create($this->recipe);
 
-        return redirect('/recipes');;
+        return redirect('/recipe');;
     }
 }

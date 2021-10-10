@@ -29,6 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // Route::resource('recipe', RecipeController::class);
 
-Route::get('recipes', Recipes::class)->name('recipe.recipes');
-Route::get('create', RecipeCreate::class)->name('recipe.create');
-Route::get('edit/{id}', RecipeEdit::class)->name('recipe.edit');
+Route::group(['prefix' => 'recipe', 'middleware' => 'auth'], function(){
+    Route::get('/', Recipes::class)->name('recipe.recipes');
+    Route::get('/create', RecipeCreate::class)->name('recipe.create');
+    Route::get('/edit/{id}', RecipeEdit::class)->name('recipe.edit');
+});
