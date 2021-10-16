@@ -15,7 +15,7 @@
 使用言語　PHP  
 データベース MySQL  
 webサーバ　Nginx  
-開発環境　docker  
+開発環境　Docker  
 
 フレームワーク　Laravel  
   
